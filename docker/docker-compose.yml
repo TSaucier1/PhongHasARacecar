@@ -1,0 +1,17 @@
+services:
+  axtime-next:
+    build:
+      context: .
+      dockerfile: Dockerfile.prebuilt
+    image: axtime-next:demo
+    container_name: axtime-next
+    restart: unless-stopped
+    ports:
+      - "8090:8080"          # open http://<server-ip>:8090
+    environment:
+      TZ: America/New_York
+    volumes:
+      - ./data:/data         # database lives here; delete this folder to start over from the bundled starter data
+    # Timing hardware: plug the USB-serial adapter into the server and uncomment:
+    # devices:
+    #   - /dev/ttyUSB0:/dev/ttyUSB0

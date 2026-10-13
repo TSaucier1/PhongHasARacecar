@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.cache/
+# Club data (member names, emails, results) stays out of git. Build it locally: npm run seed -- <old export json folder>
+data/
+*.db
+*.db-wal
+*.db-shm
+axtime-data/
